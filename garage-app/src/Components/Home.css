@@ -1,0 +1,37 @@
+#backimg{
+    background-image: url("https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg");
+    background-position: center;
+    background-size: cover;
+
+}
+@media only screen and (max-width: 600px){
+    .cardBox{
+        background-color: grey;
+    }
+    .cards{
+        background-color: #bbc5b0;
+    }
+}
+
+@media only screen and (min-width: 600px){
+    .cardBox{
+        background-color: #30332E;
+        display: flex;
+        flex-wrap: wrap;
+        /* justify-content:left; */
+        /* justify-content:space-around; */
+        /* justify-content: space-between; */
+        /* margin:10px; */
+        padding-top: 10px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .cards{
+        /* margin:10px; */
+        margin: 10px;
+        width: 280px;
+        /* margin: 5px; */
+        /* width: 23%; */
+        background-color: #bbc5b0;
+    }
+}
