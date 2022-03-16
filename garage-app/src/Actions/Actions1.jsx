@@ -12,6 +12,14 @@ export const ADD =(title,author,postDate,postCategory,content)=>{
 //Like
 export const LIKE =(id)=>{
     return{
+        type:"LIKE",
+        id:id
+    };
+}
+//DIS
+export const DIS =(id)=>{
+    return{
+        type:"DIS",
         id:id
     };
 }

@@ -1,17 +1,28 @@
 import React from "react";
 import {  NavLink  } from "react-router-dom";
 
+import { useDispatch } from "react-redux";
+import { LIKE } from "../Actions/Actions1";
+import { DIS } from "../Actions/Actions1";
 
 // import NewTab from './IndividualCardPage'
 
 const HomeCards = (props) => {
-  
-  let clk=1;
+  //using dispatch
+  const dispatch=useDispatch();
+
+  let clk=-1;
   const likeClicked=()=>{
-    console.log("Clicked card with id :");
-    console.log(props.el.id);
+    clk=clk*-1;// Checking if liked or disliked 1 for liked -1 for disliked
+    console.log("clk is");
     console.log(clk);
-    clk=clk*-1;
+    // NEED TO PUT SET TIMER AS clk ISN't being registered before calling
+    if(clk===1){
+      dispatch(LIKE(props.el.id));
+    }
+    else{
+      dispatch(DIS(props.el.id));
+    }
   }
 
   return (
