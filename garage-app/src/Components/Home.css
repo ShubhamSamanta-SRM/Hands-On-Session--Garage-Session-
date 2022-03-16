@@ -9,6 +9,8 @@
         background-color: grey;
     }
     .cards{
+        padding: 0px;
+        margin-top: 20px;
         background-color: #bbc5b0;
     }
 }

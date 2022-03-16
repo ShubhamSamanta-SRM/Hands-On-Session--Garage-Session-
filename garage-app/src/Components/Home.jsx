@@ -14,7 +14,7 @@ const Home = () => {
     <img src="https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg" className="img-fluid" alt="..."/>
     </div>
 
-    <div className="cardBox container-fluid pb-5 pt-5">
+    <div className="cardBox container-fluid">
       {BlogPostCard.map(el=>{
         return <Cards key={el.id} el={el}/>
       })}
