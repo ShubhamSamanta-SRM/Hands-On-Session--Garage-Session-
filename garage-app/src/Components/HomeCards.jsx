@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {  NavLink  } from "react-router-dom";
 
 import { useDispatch } from "react-redux";
@@ -11,19 +11,24 @@ const HomeCards = (props) => {
   //using dispatch
   const dispatch=useDispatch();
 
-  let clk=-1;
+  const [clk, setclk] = useState(1)
+  
+  // let clk=-1;
+
   const likeClicked=()=>{
-    clk=clk*-1;// Checking if liked or disliked 1 for liked -1 for disliked
+    setclk(clk*-1);
+    // clk=clk*-1;// Checking if liked or disliked 1 for liked -1 for disliked
     console.log("clk is");
     console.log(clk);
     // NEED TO PUT SET TIMER AS clk ISN't being registered before calling
-    if(clk===1){
+    if(clk===1){          //We are using 1 for Like because line no.19 takes time to execute and changes aren't reflected in this condition statement
       dispatch(LIKE(props.el.id));
     }
     else{
       dispatch(DIS(props.el.id));
     }
   }
+  // console.log(clk);
 
   return (
   

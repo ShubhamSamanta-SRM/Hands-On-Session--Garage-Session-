@@ -61,20 +61,30 @@ const blogForm=(state=initState,action)=>{
         newID=state[state.length-1].id+1;
     }
 
+    let index=-1;
     if(action.type==="LIKE"){
         console.log("Like LIKE recieved in blogForm");
-        console.log("The id is ");
-        console.log(action.id);
+        console.log("The index is ");
+        index=state.findIndex(el=>el.id===action.id);
+        console.log(state[index].title);
+        state[index].likes=state[index].likes+1;
+        // console.log(action.id);
     }
     if(action.type==="DIS"){
         console.log("Like DIS recieved in blogForm");
-        console.log("The id is ");
-        console.log(action.id);
+        console.log("The index is ");
+        index=state.findIndex(el=>el.id===action.id);
+        console.log(state[index].title);
+        state[index].likes=state[index].likes-1;
+        // console.log(action.id);
     }
+
     switch(action.type){
         case "ADD":
             return[...state,{title:action.title,author:action.author,postDate:action.postDate,postCategory:action.postCategory,content:action.content,id:newID,likes:0}];
         case "LIKE":
+            return[...state];
+        case "DIS":
             return[...state];
         default:
             return [...state];
