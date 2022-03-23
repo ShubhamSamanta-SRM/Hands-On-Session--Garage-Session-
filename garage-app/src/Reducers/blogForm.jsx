@@ -63,18 +63,12 @@ const blogForm=(state=initState,action)=>{
 
     let index=-1;
     if(action.type==="LIKE"){
-        console.log("Like LIKE recieved in blogForm");
-        console.log("The index is ");
         index=state.findIndex(el=>el.id===action.id);
-        console.log(state[index].title);
         state[index].likes=state[index].likes+1;
         // console.log(action.id);
     }
     if(action.type==="DIS"){
-        console.log("Like DIS recieved in blogForm");
-        console.log("The index is ");
         index=state.findIndex(el=>el.id===action.id);
-        console.log(state[index].title);
         state[index].likes=state[index].likes-1;
         // console.log(action.id);
     }

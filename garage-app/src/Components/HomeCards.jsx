@@ -18,8 +18,7 @@ const HomeCards = (props) => {
   const likeClicked=()=>{
     setclk(clk*-1);
     // clk=clk*-1;// Checking if liked or disliked 1 for liked -1 for disliked
-    console.log("clk is");
-    console.log(clk);
+    
     // NEED TO PUT SET TIMER AS clk ISN't being registered before calling
     if(clk===1){          //We are using 1 for Like because line no.19 takes time to execute and changes aren't reflected in this condition statement
       dispatch(LIKE(props.el.id));
